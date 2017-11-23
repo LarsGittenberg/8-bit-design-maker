@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Pixel Art Maker!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="console-panel">
+    <h1 id="test">Lab: Pixel Art Maker</h1>
+
+    <h2>Choose Grid Size</h2>
+    <form id="sizePicker">
+        Grid Height:
+        <input type="number" id="input_height" name="height" min="1" value="1">
+        Grid Width:
+        <input type="number" id="input_width" name="width" min="1" value="1">
+        <button id="submitSize" >make grid</button>
+        <button id="deleteGrid" >delete grid</button>
+    </form>
+
+    <h2>Pick A Color</h2>
+    <input type="color" id="colorPicker">
+    <button id="shiftPanel">shift panel</button>
+</div><!--end panel-->
+
+<div class="canvas-panel">
+    <h2>Design Canvas</h2>
+    <table id="pixel_canvas">
+<div class="flexbox-grid-container">
+<!--<div class="grid-unit"></div>-->
+</div><!--end flexbox-->
+
+
+    </table>
+    <button id="colorReset">Clean Slate</button>
+
+
+    <script src="designs.js"></script>
+</body>
+</html>

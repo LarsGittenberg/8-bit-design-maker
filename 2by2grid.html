@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<style>
+* {
+	box-sizing: border-box;
+}
+body {background-color: #383838;}
+
+.flexbox-grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid gray;
+	width: 102px;
+}
+
+.grid-unit {
+	width: 50px;
+	height: 50px;
+	border: 1px solid gray;
+}
+</style>
+
+
+
+</head>
+
+<body>
+<div class="flexbox-grid-container" draggable="true">
+<div class="grid-unit" id="brick-1"></div>
+<div class="grid-unit"></div>
+<div class="grid-unit"></div>
+<div class="grid-unit"></div>
+</div><!--end flexbox-->
+
+</body>
+
+<script type="text/javascript">
+/*function turnRed() {
+console.log(this);
+document.getElementById("brick-1").style.backgroundColor = "red";}*/
+$(".grid-unit").on( 'mousedown', function( evt ) {
+	console.log("clicked!");
+	var x = "#292929";
+    $( evt.target ).css( 'background', x);
+});
+
+
+</script>
+</html>
