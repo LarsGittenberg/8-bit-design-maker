@@ -20,8 +20,7 @@ function makeGrid(evt){
                         alert("grid unit removed")
             }
             else if (deleteResp === false) {
-                //how do i say do nothing
-                break;
+
             }
         }
 
