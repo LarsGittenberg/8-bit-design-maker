@@ -2,33 +2,39 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Pixel Art Maker!</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <title>pixelMaker</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
 
 </head>
 <body>
 <div class="console-panel">
-    <h1 id="test">Lab: Pixel Art Maker</h1>
+    <h1 style="font-weight: 300;">pixel<span style="font-weight: 300; color: #F3B562">art</span><span style="font-weight: 700;">Maker</span></h1>
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
+    <form id="sizePicker" >
+    <div class="height"><style></style>
+
+         <p class="height">height</p><style>p.height {margin: 10px auto 0 auto;}</style>
         <input type="number" id="input_height" name="height" min="1" value="1">
-        Grid Width:
+        </div><!--end height-->
+        <div class="width">
+        <p class="width">width</p><style>p.width {margin: 10px auto 0 auto;}</style>
         <input type="number" id="input_width" name="width" min="1" value="1">
-        <button id="submitSize" >make grid</button>
+        </div><!--width-->
+        <input id="submitSize" value="Make Grid">
     </form>
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
-    <button id="shiftPanel">shift panel</button>
+    
+<p>colour</p>
+<div class="input-color-container">
+<input id="colorPicker" class="input-color" value="#5C4B51" class="input-color" type="color">
+</div>
+
+    <button type="button" id="shiftPanel">Shift Panel</button>
 </div><!--end panel-->
 
 <div class="canvas-panel">
-    <h2>Design Canvas</h2>
+
 
 <div class="flexbox-grid-container">
 <!--<div class="grid-unit"></div>-->
@@ -36,5 +42,5 @@
 
 
 </body>
-<script src="designs2.js"></script>
+<script src="designs4.js"></script>
 </html>

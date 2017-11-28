@@ -12,22 +12,18 @@ function makeGrid(evt){
     if ( gridH < 1 || gridH > 20 || gridW < 1 || gridW > 20) {
         alert("Choose grid values between 1 and 20");
     }
-    else { 
-        if (gridActive === true) {    
-            var deleteResp = confirm("Overwrite current grid?");
-            if (deleteResp === true) {
-                    $("div.grid-unit").remove();
-                        alert("grid unit removed")
-            }
-            else if (deleteResp === false) {
-
-            }
-        }
-
-        else if (gridActive === false) {// make flexbox-grid-container visible by adding 'visible' class
-            $(".flexbox-grid-container").addClass("visible");
+    
+    else if (gridActive === true) {
+        var deleteResp = confirm("Overwrite current grid?");
+        if (deleteResp === true) {
+                $("div.grid-unit").remove();
         }
     }
+
+    else if (gridActive === false) {// make flexbox-grid-container visible by adding 'visible' class
+        $(".flexbox-grid-container").addClass("visible");
+    }
+  
     // calculate and set flexbox-grid-container width
     var flexboxW = gridW*25;// 25 because that's the px width of each square unit
     $(".flexbox-grid-container").css("width", flexboxW);
