@@ -2,45 +2,55 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>pixelMaker</title>
+    <title>pixelartMaker</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
 
 </head>
 <body>
 <div class="console-panel">
-    <h1 style="font-weight: 300;">pixel<span style="font-weight: 300; color: #F3B562">art</span><span style="font-weight: 700;">Maker</span></h1>
+    <h1 class="title" style="font-weight: 300;font-size: 48px; text-align: center;">pixel<span style="font-weight: 300; color: #F3B562;">art</span><span style="font-weight: 700;">Maker</span></h1>
 
     <form id="sizePicker" >
-    <div class="height"><style></style>
-
-         <p class="height">height</p><style>p.height {margin: 10px auto 0 auto;}</style>
-        <input type="number" id="input_height" name="height" min="1" value="1">
+    	<div class="height">
+        	<p class="height">height</p><style>p.height {margin: 10px auto 0 auto;}</style>
+        	<input type="number" id="input_height" name="height" min="1" value="1">
         </div><!--end height-->
+
         <div class="width">
-        <p class="width">width</p><style>p.width {margin: 10px auto 0 auto;}</style>
-        <input type="number" id="input_width" name="width" min="1" value="1">
+        	<p class="width">width</p><style>p.width {margin: 10px auto 0 auto;}</style>
+        	<input type="number" id="input_width" name="width" min="1" value="1">
         </div><!--width-->
-        <input id="submitSize" value="Make Grid">
+
+        <input type="submit" id="submitSize" value="Make Grid">
     </form>
 
-    
-<p>colour</p>
-<div class="input-color-container">
-<input id="colorPicker" class="input-color" value="#5C4B51" class="input-color" type="color">
+<div class="colorPicker-panel" style="width: 50%; height: auto; text-align: center;">
+	<p class="colour">colour</p><style>p.colour {margin: 10px auto 0 auto;line-height: 50px;
+    font-size: 25px;}</style>
+		<div class="input-color-container" style="margin: 0px auto 0px auto;">
+		<input id="colorPicker" class="input-color" value="#F06060" class="input-color" type="color">
+		</div><!--end input color container-->
+</div><!--end colorPicker panel-->
+
+<div class="quickPick-panel">
+	<div id="swatch_5C4B51" class="swatch"></div>
+	<div id="swatch_8CBEB2" class="swatch"></div>
+	<div id="swatch_F2EBBF" class="swatch"></div>
+	<div id="swatch_F3B562" class="swatch"></div>
+	<div id="swatch_F06060" class="swatch"></div>
 </div>
 
-    <button type="button" id="shiftPanel">Shift Panel</button>
-</div><!--end panel-->
+    
+</div><!--end console panel-->
 
 <div class="canvas-panel">
-
-
-<div class="flexbox-grid-container">
-<!--<div class="grid-unit"></div>-->
+	<div class="flexbox-grid-container">
+	<!--<div class="grid-unit"></div>-->
 </div><!--end flexbox-->
 
 
 </body>
+<button type="button" id="shiftPanel">Shift Panel</button>
 <script src="designs4.js"></script>
 </html>

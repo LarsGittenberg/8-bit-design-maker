@@ -32,6 +32,7 @@ function makeGrid(evt){
 
 	changeColor();
 	clearColor();
+	quickPick();
 }// end makeGrid
 
 
@@ -73,7 +74,27 @@ function clearColor() {
     });
 } //end changeColor
 
+function quickPick() {
+$(".quickPick-panel").on("click", "div.swatch", function(evt){
+	var target = $(this).attr('id');
+	if (target === "swatch_5C4B51") {
+	$("#colorPicker").val("#5C4B51");
+	}
+	else if (target === "swatch_8CBEB2") {
+	$("#colorPicker").val("#8CBEB2");
+	}
+	else if (target === "swatch_F2EBBF") {
+	$("#colorPicker").val("#F2EBBF");
+	}
+	else if (target === "swatch_F3B562") {
+	$("#colorPicker").val("#F3B562");
+	}
+	else {
+	$("#colorPicker").val("#F06060");
+	}		
+});
 
+}
 /* *********************************** more functions ************************************* */
 function shiftPanel() {
 $(".console-panel").toggleClass("console-panel-right");
