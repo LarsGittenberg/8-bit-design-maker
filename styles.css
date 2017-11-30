@@ -1,17 +1,19 @@
 /*styles for pixelartMaker*/
-body, html {
+html {
+    height: 100%;
+}
+
+body {
     background-color: floralwhite;
     height: 100%;
-    max-width: 1280px;
+    width: 1280px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    margin: 0;
+    margin:0 auto 0 auto;
     padding: 0;
     color: white;
     font-family: 'Lato', sans-serif;
     position: relative;
+    box-sizing: border-box;
 }
 
 h1.title {
