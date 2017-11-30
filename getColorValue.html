@@ -8,17 +8,17 @@
 
 </head>
 <body>
-<div class="console-panel">
+<div class="panel console-panel">
     <h1 class="title" style="font-weight: 300;font-size: 48px; text-align: center;">pixel<span style="font-weight: 300; color: #F3B562;">art</span><span style="font-weight: 700;">Maker</span></h1>
 
     <form id="sizePicker" >
-    	<div class="height">
-        	<p class="height">height</p>
+    	<div class="height-panel">
+        	<p>height</p>
         	<input type="number" id="input_height" name="height" min="1" value="10">
         </div><!--end height-->
 
-        <div class="width">
-        	<p class="width">width</p>
+        <div class="width-panel">
+        	<p>width</p>
         	<input type="number" id="input_width" name="width" min="1" value="10">
         </div><!--width-->
 
@@ -26,9 +26,8 @@
     </form>
 
     <div class="colorPicker-panel" >
-    	<p class="colour">colour picker</p><style>p.colour {margin: 10px auto 0 auto;line-height: 50px;
-        font-size: 25px;}</style>
-    		<div class="input-color-container" style="margin: 0px auto 0px auto;">
+    	<p>colour picker</p>
+    		<div class="input-color-container">
     	       <input id="colorPicker" class="input-color" value="#F06060" class="input-color" type="color">
     		</div><!--end input color container-->
     </div><!--end colorPicker panel-->
@@ -46,7 +45,7 @@
     
 </div><!--end console panel-->
 
-<div class="canvas-panel">
+<div class="panel canvas-panel">
 	<div class="flexbox-grid-container">
     </div><!--end flexbox grid container-->
 </div><!--end canvas panel-->

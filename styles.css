@@ -2,6 +2,10 @@
 body, html {
     background-color: floralwhite;
     height: 100%;
+    max-width: 1280px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -27,6 +31,19 @@ p {
     text-align: center;
 }
 
+/* canvas panel related styles - styling the canvas, grid and square unit*/
+
+.panel {
+	float: left;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.canvas-panel {
+    width: 70%;
+    height: 100%;
+}
+
 .flexbox-grid-container {
     position: absolute;
     top: 50%;
@@ -39,6 +56,7 @@ p {
 	width: 0;
 }
 
+/*this style is added via js to make the grid visible to user*/
 .flexbox-grid-container.visible {
     border: 1px solid #CCC8C0;
 }
@@ -50,33 +68,117 @@ p {
     box-sizing: border-box;
 }
 
-.canvas-panel {
-    width: 70%;
-    height: 100%;
-    float: left;
-    box-sizing: border-box;
-    position: relative;
-}
 
+/*console panel related styles */
 .console-panel {
     width: 30%;
     height: 100%;
-    float: left;
     background-color: #CCC8C0;
-    box-sizing: border-box;
-    position: relative;
 }
 
-.console-panel-right {
+/*this style is added via js for panel UI switching*/
+.all-panel-right {
     float: right!important;
 }
 
+
+/* size input area styles*/
+form#sizePicker {
+    background-color: #8CBEB2;
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+form .height-panel {
+    text-align: center;
+    width: 50%;
+}
+
+form .width-panel {
+    text-align: center;
+    width: 50%;
+}
+
+input#submitSize {  
+  	font-size: 20px;
+    margin: 25px auto 25px auto;
+    line-height: 60px;
+    border: none;
+    background-color: #F06060;
+    color: white;
+    width: 170px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    display: block;
+    border-radius: 5px 5px;
+    padding: 0;
+    transition: all 200ms ease-in-out;
+}
+
+input#submitSize:hover {
+    background-color: #F3B562;
+}
+
+/* styling the number input field*/
+input[type=number] {
+    width: 60px;
+    height: 40;
+    font-size: 30px;
+    color: #7F7D78;
+        transition: all 200ms ease-in-out;
+}
+
+/*found this style hack that will prevent those up-down spinners from showing up*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number]:focus {
+    background-color: #FFE0A3;
+    outline: none;
+}
+
+
+/* color area styles*/
 .colorPicker-panel {
    width: 100%; 
    height: auto; 
    text-align: center;
 } 
 
+
+/* color input styles -  another stackoverflow solution to overide border and gen styles of color input tags*/
+.input-color-container {
+    position: relative;
+    overflow: hidden;
+    width: 170px;
+    height: 60px;
+    /*border: solid 2px #CCC8C0;*/
+    border-radius: 5px 5px;
+	margin: 0px auto 0px auto;
+}
+
+.input-color {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 190px;
+    height: 80px;
+    border: none;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+input[type=color]:focus {
+    background-color: #FFE0A3;
+    outline: none;
+}
+
+
+/*quickPick panel styles*/
 .quickPick-main-panel {
     width: 100%;
     height: 165px;
@@ -124,97 +226,6 @@ p {
 .swatch#swatch_F06060 {
     background-color: #F06060;
     z-index: 10; 
-}
-
-form#sizePicker {
-    line-height: 50px;
-    font-size: 25px;
-    background-color: #8CBEB2;
-
-
-}
-
-input#submitSize {  
-  	font-size: 20px;
-    margin: 25px auto 25px auto;
-    line-height: 60px;
-    border: none;
-    background-color: #F06060;
-    color: white;
-    width: 170px;
-    cursor: pointer;
-    outline: none;
-    text-align: center;
-    display: block;
-    border-radius: 5px 5px;
-    padding: 0;
-        transition: all 200ms ease-in-out;
-}
-
-input#submitSize:hover {
-    background-color: #F3B562;
-}
-
-input[type=number] {
-    width: 60px;
-    height: 40;
-    font-size: 30px;
-    color: #7F7D78;
-        transition: all 200ms ease-in-out;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    margin: 0; 
-}
-
-input[type=number]:focus {
-    background-color: #FFE0A3;
-    outline: none;
-}
-
-form#sizePicker {
-    display: flex; 
-    flex-wrap: wrap;
-}
-
-form .height {
-    text-align: center;
-    width: 50%;}
-
-form .width {
-    text-align: center;
-    width: 50%;
-}
-
-
-
-/* color input */
-.input-color-container {
-    position: relative;
-    overflow: hidden;
-    width: 170px;
-    height: 60px;
-    /*border: solid 2px #CCC8C0;*/
-    border-radius: 5px 5px;
-}
-
-
-.input-color {
-    position: absolute;
-    left: -8px;
-    top: -8px;
-    width: 186px;
-    height: 76px;
-    border: none;
-    font-size:1.2em;
-    text-align: center;
-}
-
-input[type=color]:focus {
-    background-color: #FFE0A3;
-    outline: none;
 }
 
 

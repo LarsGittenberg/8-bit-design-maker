@@ -1,5 +1,6 @@
 
 var gridActive =  false;// set up conditional boolean for grid
+
 // alert instructions string
 var alertInstructions = "- Click a square to fill with colour\n- Double click to unfill\n- Choose a colour using the picker or quick swatch!";
 
@@ -16,7 +17,7 @@ function makeGrid(evt){
     if (isValid(gridH, gridW) === true) {
      	if (gridActive) {
 	        var overwriteResponse = confirm("Overwrite current grid?");
-	        if (overwriteResponse === true) {
+	        if (overwriteResponse) {
 	            $("div.grid-unit").remove();
 	            addGridUnit(gridH, gridW);
 	        }
@@ -41,7 +42,7 @@ function makeGrid(evt){
 
 /* *********************************** makeGrid helper functions ************************************* */
 function isValid(gridH, gridW) {
-	//want to limit and check a grid of 25x25 squares
+	//want to limit and check for a grid of 25x25 squares
 	if ( (gridH > 0) && (gridH < 26) && (gridW > 0) && (gridW < 26) )  {
 		return true; 
 	}
@@ -102,7 +103,7 @@ function quickPick() {
 
 /* *********************************** more functions ************************************* */
 function shiftPanel() {
-$(".console-panel").toggleClass("console-panel-right");
+$(".panel").toggleClass("all-panel-right");
 }// end shiftPanel
 
 
