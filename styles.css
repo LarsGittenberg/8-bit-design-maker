@@ -1,8 +1,4 @@
-* {
-    transition: all 200ms ease-in-out;
-}
-
-
+/*styles for pixelartMaker*/
 body, html {
     background-color: floralwhite;
     height: 100%;
@@ -14,17 +10,21 @@ body, html {
     position: relative;
 }
 
-h1 {
+h1.title {
     color: white;
     background-color: #7F7D78;
     padding: 25px;
     margin: 0;
+    background-image: url(pixel_logo_xl.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
 }
 
-h1.title {
-    background-image: url(pixel_logo.png);
-    background-size: 40px;
-    background-repeat: no-repeat;
+p {
+    margin: 10px auto 0 auto;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .flexbox-grid-container {
@@ -40,14 +40,14 @@ h1.title {
 }
 
 .flexbox-grid-container.visible {
-border: 1px solid #CCC8C0;
+    border: 1px solid #CCC8C0;
 }
 
 .grid-unit {
-width: 25px;
-height: 25px;
-border: 1px solid #CCC8C0;
-box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #CCC8C0;
+    box-sizing: border-box;
 }
 
 .canvas-panel {
@@ -56,7 +56,6 @@ box-sizing: border-box;
     float: left;
     box-sizing: border-box;
     position: relative;
-
 }
 
 .console-panel {
@@ -65,13 +64,24 @@ box-sizing: border-box;
     float: left;
     background-color: #CCC8C0;
     box-sizing: border-box;
-    box-shadow: 5px 5px 1px #00000033;
     position: relative;
 }
 
 .console-panel-right {
     float: right!important;
-    box-shadow: -2px -2px 2px #00000033;
+}
+
+.colorPicker-panel {
+   width: 100%; 
+   height: auto; 
+   text-align: center;
+} 
+
+.quickPick-main-panel {
+    width: 100%;
+    height: 165px;
+    position: absolute;
+    bottom: 0;
 }
 
 .quickPick-panel {
@@ -79,41 +89,49 @@ box-sizing: border-box;
     height: 100px;
     position: absolute;
     bottom: 0px;
-    background-color: red;
     display: flex;
     flex-wrap: nowrap;
     cursor: pointer;
+    background-color: #7F7D78;
 }
 
 .swatch {
+ 	height: 0;
     width: 20%;
-    height: 100%;
-    box-shadow: 3px 4px 5px #00000033;
+    padding-bottom: 20%;
 }
+
 .swatch#swatch_5C4B51 {
     background-color: #5C4B51;
+    z-index: 50;
 }
 
 .swatch#swatch_8CBEB2 {
     background-color: #8CBEB2;
+    z-index: 40;
 }
 
 .swatch#swatch_F2EBBF {
     background-color: #F2EBBF;
+    z-index: 30;
 }
 
 .swatch#swatch_F3B562 {
     background-color: #F3B562;
+    z-index: 20; 
 }
 
 .swatch#swatch_F06060 {
     background-color: #F06060;
+    z-index: 10; 
 }
 
 form#sizePicker {
     line-height: 50px;
     font-size: 25px;
     background-color: #8CBEB2;
+
+
 }
 
 input#submitSize {  
@@ -121,21 +139,20 @@ input#submitSize {
     margin: 25px auto 25px auto;
     line-height: 60px;
     border: none;
-    border-radius: 0;
     background-color: #F06060;
     color: white;
-    width: 200px;
+    width: 170px;
     cursor: pointer;
     outline: none;
     text-align: center;
     display: block;
     border-radius: 5px 5px;
-    box-shadow: 2px 2px 0 #00000033;
+    padding: 0;
+        transition: all 200ms ease-in-out;
 }
 
 input#submitSize:hover {
     background-color: #F3B562;
-    box-shadow: none;
 }
 
 input[type=number] {
@@ -143,13 +160,13 @@ input[type=number] {
     height: 40;
     font-size: 30px;
     color: #7F7D78;
-
+        transition: all 200ms ease-in-out;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
-  margin: 0; 
+    -webkit-appearance: none;
+    margin: 0; 
 }
 
 input[type=number]:focus {
@@ -158,34 +175,46 @@ input[type=number]:focus {
 }
 
 form#sizePicker {
-
-
-    display: flex; flex-wrap: wrap;}
+    display: flex; 
+    flex-wrap: wrap;
+}
 
 form .height {
-    text-align: center; width: 50%;}
+    text-align: center;
+    width: 50%;}
 
-    form .width {text-align: center; width: 50%;}
+form .width {
+    text-align: center;
+    width: 50%;
+}
+
 
 
 /* color input */
 .input-color-container {
-  position: relative;
-  overflow: hidden;
-  width: 80px;
-  height: 40px;
-  border: solid 2px #CCC8C0;
- 
+    position: relative;
+    overflow: hidden;
+    width: 170px;
+    height: 60px;
+    /*border: solid 2px #CCC8C0;*/
+    border-radius: 5px 5px;
 }
 
+
 .input-color {
-  position: absolute;
-  left: -5px;
-  top: -8px;
-  width: 96px;
-  height: 56px;
-  border: none;
-  font-size:1.2em;
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    width: 186px;
+    height: 76px;
+    border: none;
+    font-size:1.2em;
+    text-align: center;
+}
+
+input[type=color]:focus {
+    background-color: #FFE0A3;
+    outline: none;
 }
 
 
@@ -207,7 +236,8 @@ button#shiftPanel {
     left: 50%;
     bottom: 0px;
     transform: translate(-50%, 0);
-    z-index: 1;
+    transition: all 200ms ease-in-out;
+    z-index: 1;/*w/o this can't click button*/
 }
 
 button#shiftPanel:hover {
