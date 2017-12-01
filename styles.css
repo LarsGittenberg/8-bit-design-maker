@@ -18,13 +18,26 @@ body {
 
 h1.title {
     color: white;
+    font-weight: 300; 
+    font-size: 48px; 
+    text-align: center;
     background-color: #7F7D78;
-    padding: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     margin: 0;
-    background-image: url(pixel_logo_xl.png);
+    background-image: url(pixelLogo.png);
     background-size: 20px;
     background-repeat: no-repeat;
 }
+
+h1.title span.art {
+    color: #F3B562;
+}
+
+h1.title span.maker {
+    font-weight: 700;
+}
+
 
 p {
     margin: 10px auto 0 auto;
