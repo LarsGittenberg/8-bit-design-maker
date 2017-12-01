@@ -1,8 +1,10 @@
 
-var gridActive =  false;// set up conditional boolean for grid
+let gridActive =  false;// set up conditional boolean for grid
 
 // alert instructions string
-var alertInstructions = "- Click a square to fill with colour\n- Double click to unfill\n- Choose a colour using the picker or quick swatch!";
+const alertInstructions = "- Click a square to fill with colour\n-" + 
+	"Double click to unfill\n-" + 
+	"Choose a colour using the picker or quick swatch!";
 
 // set up grid
 function makeGrid(evt){
@@ -10,13 +12,13 @@ function makeGrid(evt){
     evt.preventDefault();	
 
 	// get grid height and width value
-    var gridH = $("#input_height").val();
-    var gridW = $("#input_width").val();
+    let gridH = $("#input_height").val();
+    let gridW = $("#input_width").val();
 
     //validate that input is between 1 and 20
     if (isValid(gridH, gridW) === true) {
      	if (gridActive) {
-	        var overwriteResponse = confirm("Overwrite current grid?");
+	        const overwriteResponse = confirm("Overwrite current grid?");
 	        if (overwriteResponse) {
 	            $("div.grid-unit").remove();
 	            addGridUnit(gridH, gridW);
@@ -53,12 +55,12 @@ function isValid(gridH, gridW) {
 }// end isValid
 
 function addGridUnit(gridH, gridW) {
-	var flexboxW = gridW*20;// 20 because that's the px width of each square/grid unit
+	let flexboxW = gridW*20;// 20 because that's the px width of each square/grid unit
 	//set flexbox-grid-container width
     $(".flexbox-grid-container").css("width", flexboxW);
 
     // calculate how many squares/grid-units to populate
-    var howManySquares = gridH*gridW;
+    let howManySquares = gridH*gridW;
     for (var i = 0; i < howManySquares; i++) {
         $(".flexbox-grid-container").append("<div class='grid-unit'></div>");
     }// end for loop
@@ -67,7 +69,7 @@ function addGridUnit(gridH, gridW) {
 function changeColor() {
 	// changing the colors of a square/pixel/grid-unit with one click
     $(".grid-unit").on( 'mousedown', function( evt ) {
-        var hexVal = $("#colorPicker").val();
+        let hexVal = $("#colorPicker").val();
         $( evt.target ).css( 'background', hexVal);
     });
 } //end changeColor
@@ -82,7 +84,7 @@ function clearColor() {
 
 function quickPick() {
 	$(".quickPick-panel").on("click", "div.swatch", function(evt){
-		var targetId = $(this).attr('id');
+		let targetId = $(this).attr('id');
 		if (targetId === "swatch_5C4B51") {
 			$("#colorPicker").val("#5C4B51");
 		}

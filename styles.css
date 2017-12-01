@@ -46,7 +46,7 @@ p {
     text-align: center;
 }
 
-/* canvas panel related styles - styling the canvas, grid and square unit*/
+/* ******** canvas panel related styles - styling the canvas, grid and square unit *********** */
 
 .panel {
 	float: left;
@@ -84,7 +84,7 @@ p {
 }
 
 
-/*console panel related styles */
+/* ********************** console panel related styles ***************** */
 .console-panel {
     width: 30%;
     height: 100%;
@@ -114,7 +114,7 @@ form .width-panel {
     width: 50%;
 }
 
-input#submitSize {  
+input#submitSize {
   	font-size: 20px;
     margin: 25px auto 25px auto;
     line-height: 60px;
