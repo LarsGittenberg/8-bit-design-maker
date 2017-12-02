@@ -16,8 +16,8 @@ function makeGrid(evt){
     let gridW = $('#input_width').val();
 
     //validate that input is between 1 and 20
-    if (isValid(gridH, gridW) === true) {
-     	if (gridActive) {
+    if (isValid(gridH, gridW) === true ) {
+     	if ( gridActive ) {
 	        const overwriteResponse = confirm('Overwrite current grid? You should know you can\'t undo this.');
 	        if (overwriteResponse) {
 	            $('div.grid-unit').remove();
@@ -25,7 +25,7 @@ function makeGrid(evt){
 	        }
 
      } else if (!gridActive) {
-        	alert(alertInstructions)
+        	alert( alertInstructions )
 			$('.flexbox-grid-container').addClass('visible');
 			addGridUnit(gridH, gridW);
 			gridActive = true;
@@ -59,7 +59,7 @@ function addGridUnit(gridH, gridW) {
     // calculate how many squares/grid-units to populate
     let howManySquares = gridH*gridW;
     for (var i = 0; i < howManySquares; i++) {//I can't use const i = 0; per Udacity style guide
-    	//doesn't work in my Chrome browser
+    	//b/c doesn't work in my Chrome browser
         $('.flexbox-grid-container').append('<div class="grid-unit"></div>');
     }// end for loop
 }// end addGridUnit
@@ -68,7 +68,7 @@ function changeColor() {
 	// changing the colors of a square/pixel/grid-unit with one click
     $('.grid-unit').on( 'mousedown', function( evt ) {
         let hexVal = $('#colorPicker').val();
-        $( evt.target ).css( 'background', hexVal);
+        $(evt.target).css( 'background', hexVal);
     });
 } // end changeColor
 
@@ -100,9 +100,10 @@ function quickPick() {
 	}
 }// end quickPick
 
-/* *********************************** more functions ************************************* */
+
 function shiftPanel() {
-$('.panel').toggleClass('all-panel-right');
+	//shift UI panels left to right and vice versa
+	$('.panel').toggleClass('all-panel-right');
 }// end shiftPanel
 
 
@@ -110,12 +111,13 @@ $('.panel').toggleClass('all-panel-right');
 // When size is submitted by the user, call makeGrid()
 $('#submitSize').on('click', makeGrid);
 
-// When anywhere in parent quickPick-panel is clicked, delegate the corresponding child swatch div's colour to
-//the colour picker, using jQuery event delegation syntax
+// When anywhere in parent quickPick-panel is clicked, assign the corresponding child
+//swatch div's colour to the colour picker with quickPick(), using jQuery
+//event delegation syntax (takes advantage of bubbling)
 $('.quickPick-panel').on('click', 'div.swatch', quickPick);
 
-// When user wants the UI panel shifted left or right, depending on
-//their right-left handedness preference (if using Wacom tablet for eg)
+// When user clicks this button, call shiftPanel(). This feature allows the UI panel shifted left or right
+//( useful depending on their right-left handedness preference if using Wacom tablet for eg)
 $('#shiftPanel').on('click', shiftPanel);
 
 

@@ -202,14 +202,14 @@ input[type=color]:focus {
 /* quickPick panel styles*/
 .quickPick-main-panel {
     width: 100%;
-    height: 165px;
+    height: 190px;
     position: absolute;
     bottom: 0;
 }
 
 .quickPick-panel {
     width: 100%;
-    height: 100px;
+    height: 125px;
     position: absolute;
     bottom: 0px;
     display: flex;
