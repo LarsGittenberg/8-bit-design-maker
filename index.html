@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>pixelartMaker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>pixel art Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- to accommodate md/lg tablet devices -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
 
 </head>
 <body>
 <div class="panel console-panel">
-    <h1 class="title">pixel<span class="art">art</span><span class="maker">Maker</span></h1>
+    <h1 class="title">pixel<span class="art-text">art</span><span class="maker-text">Maker</span></h1>
 
     <form id="sizePicker" >
     	<div class="height-panel">
@@ -28,21 +29,21 @@
     <div class="colorPicker-panel" >
     	<p>colour picker</p>
     		<div class="input-color-container">
-    	       <input id="colorPicker" class="input-color" value="#F06060" type="color">
+    	       <input type="color" id="colorPicker" class="input-color" value="#f06060">
     		</div><!--end input color container-->
     </div><!--end colorPicker panel-->
 
     <div class="quickPick-main-panel">
         <p>quick swatch</p>
         <div class="quickPick-panel">
-        	<div id="swatch_5C4B51" class="swatch"></div>
-        	<div id="swatch_8CBEB2" class="swatch"></div>
-        	<div id="swatch_F2EBBF" class="swatch"></div>
-        	<div id="swatch_F3B562" class="swatch"></div>
-        	<div id="swatch_F06060" class="swatch"></div>
+        	<div id="swatch_5c4b51" class="swatch"></div>
+        	<div id="swatch_8cbeb2" class="swatch"></div>
+        	<div id="swatch_f2ebbf" class="swatch"></div>
+        	<div id="swatch_f3b562" class="swatch"></div>
+        	<div id="swatch_f06060" class="swatch"></div>
         </div>
     </div>
-    
+
 </div><!--end console panel-->
 
 <div class="panel canvas-panel">

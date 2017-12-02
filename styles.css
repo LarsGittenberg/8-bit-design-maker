@@ -1,4 +1,6 @@
-/*styles for pixelartMaker*/
+
+
+/* styles for pixel art Maker*/
 html {
     height: 100%;
 }
@@ -6,7 +8,7 @@ html {
 body {
     background-color: floralwhite;
     height: 100%;
-    max-width: 1600px;
+    max-width: 1920px;
     display: block;
     margin:0 auto 0 auto;
     padding: 0;
@@ -16,25 +18,25 @@ body {
     box-sizing: border-box;
 }
 
-h1.title {
+.title {
     color: white;
-    font-weight: 300; 
-    font-size: 48px; 
+    font-weight: 300;
+    font-size: 48px;
     text-align: center;
-    background-color: #7F7D78;
+    background-color: #7f7d78;
     padding-top: 25px;
     padding-bottom: 25px;
     margin: 0;
-    background-image: url(pixelLogo.png);
-    background-size: 20px;
+    background-image: url(pixel_logo_sm.png);
+    background-size: 32px;
     background-repeat: no-repeat;
 }
 
-h1.title span.art {
-    color: #F3B562;
+.title span.art-text {
+    color: #f3b562;
 }
 
-h1.title span.maker {
+.title span.maker-text {
     font-weight: 700;
 }
 
@@ -46,16 +48,16 @@ p {
     text-align: center;
 }
 
-/* ******** canvas panel related styles - styling the canvas, grid and square unit *********** */
+/*  ******** canvas panel related styles - styling the canvas, grid and square unit *********** */
 
 .panel {
-	float: left;
+	float: none;
     box-sizing: border-box;
     position: relative;
 }
 
 .canvas-panel {
-    width: 70%;
+    width: 100%;
     height: 100%;
 }
 
@@ -71,45 +73,45 @@ p {
 	width: 0;
 }
 
-/*this style is added via js to make the grid visible to user*/
+/* this style is added via js to make the grid visible to user*/
 .flexbox-grid-container.visible {
-    border: 1px solid #CCC8C0;
+    border: 1px solid #ccc8c0;
 }
 
 .grid-unit {
     width: 20px;
     height: 20px;
-    border: 1px solid #CCC8C0;
+    border: 1px solid #ccc8c0;
     box-sizing: border-box;
 }
 
 
-/* ********************** console panel related styles ***************** */
+/*  ********************** console panel related styles ***************** */
 .console-panel {
-    width: 30%;
+    width: 100%;
     height: 100%;
-    background-color: #CCC8C0;
+    background-color: #ccc8c0;
 }
 
-/*this style is added via js for panel UI switching*/
+/* this style is added via js for panel UI switching*/
 .all-panel-right {
     float: right!important;
 }
 
 
-/* size input area styles*/
+/*  size input area styles*/
 form#sizePicker {
-    background-color: #8CBEB2;
-    display: flex; 
+    background-color: #a9b6b0;/*  or #b7c5be*/
+    display: flex;
     flex-wrap: wrap;
 }
 
-form .height-panel {
+.height-panel {
     text-align: center;
     width: 50%;
 }
 
-form .width-panel {
+.width-panel {
     text-align: center;
     width: 50%;
 }
@@ -119,7 +121,7 @@ input#submitSize {
     margin: 25px auto 25px auto;
     line-height: 60px;
     border: none;
-    background-color: #F06060;
+    background-color: #f06060;
     color: white;
     width: 170px;
     cursor: pointer;
@@ -132,46 +134,50 @@ input#submitSize {
 }
 
 input#submitSize:hover {
-    background-color: #F3B562;
+    background-color: #ffe0a3;
+    color: #7f7d78;
 }
 
-/* styling the number input field*/
+/*  styling the number input field*/
 input[type=number] {
     width: 60px;
-    height: 40;
+    height: 40px;
+    border: none;
     font-size: 30px;
-    color: #7F7D78;
-        transition: all 200ms ease-in-out;
+    color: #7f7d78;
+    transition: all 200ms ease-in-out;
 }
 
-/*found this style hack that will prevent those up-down spinners from showing up*/
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+/* found this style hack that will prevent those up-down spinners (they increment numbers)
+from showing up in Chrome - still shows up in Firefox*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0; 
+    margin: 0;
 }
 
 input[type=number]:focus {
-    background-color: #FFE0A3;
+    background-color: #ffe0a3;
     outline: none;
+    border: none;
 }
 
 
-/* color area styles*/
+/*  color area styles*/
 .colorPicker-panel {
-   width: 100%; 
-   height: auto; 
+   width: 100%;
+   height: auto;
    text-align: center;
-} 
+}
 
 
-/* color input styles -  another stackoverflow solution to overide border and gen styles of color input tags*/
+/*  color input styles -  another stackoverflow solution to overide border and gen styles of color input tags*/
 .input-color-container {
     position: relative;
     overflow: hidden;
     width: 170px;
     height: 60px;
-    /*border: solid 2px #CCC8C0;*/
+    /* border: solid 2px #ccc8c0;*/
     border-radius: 5px 5px;
 	margin: 0px auto 0px auto;
 }
@@ -188,12 +194,12 @@ input[type=number]:focus {
 }
 
 input[type=color]:focus {
-    background-color: #FFE0A3;
+    background-color: #ffe0a3;
     outline: none;
 }
 
 
-/*quickPick panel styles*/
+/* quickPick panel styles*/
 .quickPick-main-panel {
     width: 100%;
     height: 165px;
@@ -209,48 +215,47 @@ input[type=color]:focus {
     display: flex;
     flex-wrap: nowrap;
     cursor: pointer;
-    background-color: #7F7D78;
+    background-color: #7f7d78;
 }
 
 .swatch {
  	height: 0;
     width: 20%;
     padding-bottom: 20%;
+    transition: all 200ms ease-in-out;
+}
+.swatch:hover {
+    border-bottom: 3px solid #ffe0a3;
 }
 
-.swatch#swatch_5C4B51 {
-    background-color: #5C4B51;
-    z-index: 50;
+.swatch#swatch_5c4b51 {
+    background-color: #5c4b51;
 }
 
-.swatch#swatch_8CBEB2 {
-    background-color: #8CBEB2;
-    z-index: 40;
+.swatch#swatch_8cbeb2 {
+    background-color: #8cbeb2;
 }
 
-.swatch#swatch_F2EBBF {
-    background-color: #F2EBBF;
-    z-index: 30;
+.swatch#swatch_f2ebbf {
+    background-color: #f2ebbf;
 }
 
-.swatch#swatch_F3B562 {
-    background-color: #F3B562;
-    z-index: 20; 
+.swatch#swatch_f3b562{
+    background-color: #f3b562;
 }
 
-.swatch#swatch_F06060 {
-    background-color: #F06060;
-    z-index: 10; 
+.swatch#swatch_f06060 {
+    background-color: #f06060;
 }
 
 
-/* shift button */
-button#shiftPanel {  
+/*  shift button */
+button#shiftPanel {
   	font-size: 15px;
     line-height: 30px;
     border: none;
     border-radius: 0;
-    background-color: #F06060;
+    background-color: #f06060;
     color: white;
     width: 120px;
     cursor: pointer;
@@ -263,9 +268,32 @@ button#shiftPanel {
     bottom: 0px;
     transform: translate(-50%, 0);
     transition: all 200ms ease-in-out;
-    z-index: 1;/*w/o this can't click button*/
+    /*z-index: 1; at one point needed this b/c can't click button = keep here to figure out why*/
+    display: none;
 }
 
 button#shiftPanel:hover {
-    background-color: #F3B562;
+    background-color: #ffe0a3;
+    color: #7f7d78;
+
 }
+
+@media only screen and (min-width: 1020px) {
+.panel {
+    float: left;
+}
+
+.canvas-panel {
+    width: 70%;
+}
+
+.console-panel {
+    width: 30%;
+}
+
+button#shiftPanel {
+    display: block;
+}
+
+}/* end media query */
+
