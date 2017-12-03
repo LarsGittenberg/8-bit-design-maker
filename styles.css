@@ -177,9 +177,14 @@ input[type=number]:focus {
     overflow: hidden;
     width: 170px;
     height: 60px;
-    /* border: solid 2px #ccc8c0;*/
+    border: solid 2px #ccc8c0;
     border-radius: 5px 5px;
 	margin: 0px auto 0px auto;
+    transition: all 200ms ease-in-out;
+}
+
+.input-color-container:hover {
+    border: solid 3px #ffe0a3;
 }
 
 .input-color {
