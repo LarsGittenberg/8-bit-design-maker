@@ -111,8 +111,8 @@ function shiftPanel() {
 // When size is submitted by the user, call makeGrid()
 $('#submitSize').on('click', makeGrid);
 
-// When anywhere in parent quickPick-panel is clicked, assign the corresponding child
-//swatch div's colour to the colour picker with quickPick(), using jQuery
+// When anywhere in parent quickPick-panel is clicked, quickPick() is called - it assigns the
+//corresponding child swatch div's colour to the colour picker with quickPick(), using jQuery
 //event delegation syntax (takes advantage of bubbling)
 $('.quickPick-panel').on('click', 'div.swatch', quickPick);
 
