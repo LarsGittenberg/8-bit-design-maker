@@ -23,20 +23,22 @@ function makeGrid(evt){
 	            $('div.grid-unit').remove();
 	            addGridUnit(gridH, gridW);
 	        }
-
-     } else if (!gridActive) {
-        	alert( alertInstructions )
-			$('.flexbox-grid-container').addClass('visible');
-			addGridUnit(gridH, gridW);
-			gridActive = true;
-		}
+	    //this line below was else if (!gridActive) {, but changed to
+	    } else {
+	        	alert( alertInstructions )
+				$('.flexbox-grid-container').addClass('visible');
+				addGridUnit(gridH, gridW);
+				gridActive = true;
+			}
 
     } else {
         alert('Tut-tut! Choose grid values between 1 and 25 only!');
     }
 
-	changeColor();
+
 	clearColor();
+	dragChangecolor();
+
 }// end makeGrid
 
 
@@ -64,13 +66,35 @@ function addGridUnit(gridH, gridW) {
     }// end for loop
 }// end addGridUnit
 
-function changeColor() {
-	// changing the colors of a square/pixel/grid-unit with one click
-    $('.grid-unit').on( 'mousedown', function( evt ) {
-        let hexVal = $('#colorPicker').val();
-        $(evt.target).css( 'background', hexVal);
-    });
-} // end changeColor
+
+
+var dragColorState = false;
+
+
+// changing the colors of a square/pixel with click and drag motion
+$(window).mousedown(function(){
+alert("down");
+dragColorState = true;
+})
+
+
+
+$(window).mouseup(function() {
+alert("up");
+dragColorState = false;
+})
+
+
+function dragChangeColor(){
+	while (dragColorState) {
+		$('grid-unit').mouseenter(function( evt ){
+			let hexVal = $('#colorPicker').val();
+			$(evt.target).css( 'background', hexVal);
+		});
+	}// end while
+}// end dragchangecolor
+
+
 
 function clearColor() {
 	// clear the color of a square/pixel/grid-unit with double-click
