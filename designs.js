@@ -37,12 +37,9 @@ function makeGrid(evt){
 
 
 	clearColor();
-
-
-
-
+	colorClick();
 	$('.grid-unit').mousemove(colorDrag);
-
+	colorDrag();
 
 }// end makeGrid
 
@@ -72,29 +69,33 @@ function addGridUnit(gridH, gridW) {
 }// end addGridUnit
 
 
-
-var dragColorState = false;
-
-function colorDrag( evt ) {
-	if (dragColorState) {
+// changing the colors of a square/pixel with only one click motion
+function colorClick() {
+	$('.grid-unit').on('click', function(evt){
 		let hexVal = $('#colorPicker').val();
 		$(evt.target).css( 'background', hexVal);
-	}// end if
+	});
 }
 
+
 // changing the colors of a square/pixel with click and drag motion
+var dragColorState = false;
 $(window).mousedown(function(){
-console.log("down");
 dragColorState = true;
-})
-
-
+});
 
 $(window).mouseup(function() {
-console.log("up");
 dragColorState = false;
-})
+});
 
+function colorDrag() {
+	$('.grid-unit').mousemove( function(evt) {
+		if (dragColorState) {
+			let hexVal = $('#colorPicker').val();
+			$(evt.target).css( 'background', hexVal);
+		}// end if
+	});
+}
 
 
 function clearColor() {
