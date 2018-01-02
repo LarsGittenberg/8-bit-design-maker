@@ -38,7 +38,6 @@ function makeGrid(evt){
 
 	clearColor();
 	colorClick();
-	$('.grid-unit').mousemove(colorDrag);
 	colorDrag();
 
 }// end makeGrid
