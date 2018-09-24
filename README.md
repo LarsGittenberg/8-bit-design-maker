@@ -3,22 +3,22 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
-* [Student Comments](#comments)
+* [App Goal](#goal)
+* [About](#about)
 
-## Instructions
 
-To get started, open `designs.js` and start building out the app's functionality.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+## <a name="instructions"></a>Instructions
+For game to work, download index.html, styles.css and designs.js. Additional images may need to be downloaded (called in index.html) for branding/app experience to be complete. 
 
-## Contributing
+## <a name="goal"></a>App Goal
+Select a grid size, then, 'paint' the pixel canvas given to you in either suggested colors or via color picker. Make pixel art! Want to redo? Click 'Make Grid' button again. 
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## <a name="about"></a>About
+- Student submisstion for Udacity's Front End Web Development
+- [Demo Game](http://www.lawrencegetubig.com/pixel/index.html)
 
-## Student Comments
-
-Goal: to build the basic required app functionality of Pixel Art Maker, and include improved UX/UI.
+Project Goal: to build the basic required app functionality of Pixel Art Maker, and include improved UX/UI.
 
 Basic required app functionality: Use javaScript to allow user to create a grid of squares that can be filled by user selected colors.
 
