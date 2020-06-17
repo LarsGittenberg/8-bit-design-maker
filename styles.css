@@ -23,7 +23,7 @@ body {
     font-weight: 300;
     font-size: 48px;
     text-align: center;
-    background-color: #7f7d78;
+    background-color: #5a5852;
     padding-top: 25px;
     padding-bottom: 25px;
     margin: 0;
@@ -58,7 +58,7 @@ p {
 
 .canvas-panel {
     width: 100%;
-    height: 100%;
+    height: 650px;
 }
 
 .flexbox-grid-container {
@@ -89,8 +89,8 @@ p {
 /*  ********************** console panel related styles ***************** */
 .console-panel {
     width: 100%;
-    height: 100%;
-    background-color: #ccc8c0;
+    height: 650px;
+    background-color: #7f7c78;
 }
 
 /* this style is added via js for panel UI switching*/
@@ -101,9 +101,11 @@ p {
 
 /*  size input area styles*/
 form#sizePicker {
-    background-color: #a9b6b0;/*  or #b7c5be*/
+    background-color: #7f7b78; /* or #a9b6b0 or #b7c5be*/
     display: flex;
     flex-wrap: wrap;
+    border-top: 2px solid #fefaf0;
+    border-bottom: 2px solid #fefaf0;
 }
 
 .height-panel {
@@ -290,10 +292,12 @@ button#shiftPanel:hover {
 
 .canvas-panel {
     width: 70%;
+    height: 100%;
 }
 
 .console-panel {
     width: 30%;
+    height: 100%;
 }
 
 button#shiftPanel {
